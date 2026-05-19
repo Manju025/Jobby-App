@@ -1,0 +1,55 @@
+.bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .bg {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+    padding: 40px;
+  }
+}
+
+.info-content {
+  padding-left: 100px;
+  padding-top: 35px;
+  padding-right: 850px;
+}
+
+.heading {
+  font-size: 65px;
+}
+
+@media screen and (min-width: 768px) {
+  .heading {
+    font-size: 60px;
+    max-width: 600px;
+  }
+}
+
+.p {
+  font-size: 25px;
+  color: #64748b;
+}
+
+@media screen and (min-width: 768px) {
+  .p {
+    font-size: 20px;
+    max-width: 600px;
+  }
+}
+.btn {
+  background-color: #4f46e5;
+  border-width: 0px;
+  border-radius: 7px;
+  padding: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  }
+}
