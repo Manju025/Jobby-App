@@ -1,6 +1,6 @@
 .bg {
   background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
-  background-size: cover;
+  background-size: fit;
   height: 100vh;
 }
 
@@ -13,7 +13,6 @@
 
 .info-content {
   padding-left: 100px;
-  padding-top: 35px;
   padding-right: 850px;
 }
 
