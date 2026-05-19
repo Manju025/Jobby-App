@@ -213,28 +213,28 @@ class Jobs extends Component {
     switch (profileApiStatus) {
       case apiStatusConstants.inProgress:
         return (
-          <div className='profile-loader-container' data-testid='loader'>
-            <Loader type='ThreeDots' color='#ffffff' height='50' width='50' />
+          <div className="profile-loader-container" data-testid="loader">
+            <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
           </div>
         )
       case apiStatusConstants.success:
         return (
-          <div className='profile-container'>
+          <div className="profile-container">
             <img
               src={profileData.profileImageUrl}
-              alt='profile'
-              className='profile-img'
+              alt="profile"
+              className="profile-img"
             />
-            <h1 className='profile-name'>{profileData.name}</h1>
-            <p className='profile-bio'>{profileData.shortBio}</p>
+            <h1 className="profile-name">{profileData.name}</h1>
+            <p className="profile-bio">{profileData.shortBio}</p>
           </div>
         )
       case apiStatusConstants.failure:
         return (
-          <div className='profile-failure-container'>
+          <div className="profile-failure-container">
             <button
-              type='button'
-              className='retry-btn'
+              type="button"
+              className="retry-btn"
               onClick={this.onRetryProfile}
             >
               Retry
@@ -251,14 +251,14 @@ class Jobs extends Component {
     switch (jobsApiStatus) {
       case apiStatusConstants.inProgress:
         return (
-          <div className='jobs-loader-container' data-testid='loader'>
-            <Loader type='ThreeDots' color='#ffffff' height='50' width='50' />
+          <div className="jobs-loader-container" data-testid="loader">
+            <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
           </div>
         )
       case apiStatusConstants.success:
         if (jobsData.length > 0) {
           return (
-            <ul className='job-cards-list'>
+            <ul className="job-cards-list">
               {jobsData.map(job => (
                 <JobCard key={job.id} jobData={job} />
               ))}
@@ -266,33 +266,33 @@ class Jobs extends Component {
           )
         }
         return (
-          <div className='no-jobs-container'>
+          <div className="no-jobs-container">
             <img
-              src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png'
-              alt='no jobs'
-              className='no-jobs-img'
+              src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+              alt="no jobs"
+              className="no-jobs-img"
             />
-            <h1 className='no-jobs-heading'>No Jobs Found</h1>
-            <p className='no-jobs-description'>
+            <h1 className="no-jobs-heading">No Jobs Found</h1>
+            <p className="no-jobs-description">
               We could not find any jobs. Try other filters.
             </p>
           </div>
         )
       case apiStatusConstants.failure:
         return (
-          <div className='jobs-failure-container'>
+          <div className="jobs-failure-container">
             <img
-              src='https://assets.ccbp.in/frontend/react-js/failure-img.png'
-              alt='failure view'
-              className='failure-img'
+              src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+              alt="failure view"
+              className="failure-img"
             />
-            <h1 className='failure-heading'>Oops! Something Went Wrong</h1>
-            <p className='failure-description'>
+            <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+            <p className="failure-description">
               We cannot seem to find the page you are looking for.
             </p>
             <button
-              type='button'
-              className='retry-btn'
+              type="button"
+              className="retry-btn"
               onClick={this.onRetryJobs}
             >
               Retry
@@ -305,18 +305,18 @@ class Jobs extends Component {
   }
 
   renderEmploymentTypes = () => (
-    <ul className='filter-list'>
-      <h1 className='filter-heading'>Type of Employment</h1>
+    <ul className="filter-list">
+      <h1 className="filter-heading">Type of Employment</h1>
       {employmentTypesList.map(type => (
-        <li key={type.employmentTypeId} className='filter-item'>
+        <li key={type.employmentTypeId} className="filter-item">
           <input
-            type='checkbox'
+            type="checkbox"
             id={type.employmentTypeId}
-            className='checkbox-input'
+            className="checkbox-input"
             value={type.employmentTypeId}
             onChange={this.onSelectEmployment}
           />
-          <label htmlFor={type.employmentTypeId} className='filter-label'>
+          <label htmlFor={type.employmentTypeId} className="filter-label">
             {type.label}
           </label>
         </li>
@@ -325,19 +325,19 @@ class Jobs extends Component {
   )
 
   renderSalaryRanges = () => (
-    <ul className='filter-list'>
-      <h1 className='filter-heading'>Salary Range</h1>
+    <ul className="filter-list">
+      <h1 className="filter-heading">Salary Range</h1>
       {salaryRangesList.map(salary => (
-        <li key={salary.salaryRangeId} className='filter-item'>
+        <li key={salary.salaryRangeId} className="filter-item">
           <input
-            type='radio'
+            type="radio"
             id={salary.salaryRangeId}
-            name='salary'
-            className='radio-input'
+            name="salary"
+            className="radio-input"
             value={salary.salaryRangeId}
             onChange={this.onSelectSalary}
           />
-          <label htmlFor={salary.salaryRangeId} className='filter-label'>
+          <label htmlFor={salary.salaryRangeId} className="filter-label">
             {salary.label}
           </label>
         </li>
@@ -346,18 +346,18 @@ class Jobs extends Component {
   )
 
   renderLocations = () => (
-    <ul className='filter-list'>
-      <h1 className='filter-heading'>Locations</h1>
+    <ul className="filter-list">
+      <h1 className="filter-heading">Locations</h1>
       {locations.map(location => (
-        <li key={location.locationId} className='filter-item'>
+        <li key={location.locationId} className="filter-item">
           <input
-            type='checkbox'
+            type="checkbox"
             id={location.locationId}
-            className='checkbox-input'
+            className="checkbox-input"
             value={location.locationId}
             onChange={this.onSelectlocation}
           />
-          <label htmlFor={location.locationId} className='filter-label'>
+          <label htmlFor={location.locationId} className="filter-label">
             {location.label}
           </label>
         </li>
@@ -370,49 +370,49 @@ class Jobs extends Component {
     return (
       <>
         <Header />
-        <div className='jobs-route-container'>
-          <div className='search-input-container-sm'>
+        <div className="jobs-route-container">
+          <div className="search-input-container-sm">
             <input
-              type='search'
-              className='search-input'
-              placeholder='Search'
+              type="search"
+              className="search-input"
+              placeholder="Search"
               value={searchInput}
               onChange={this.onChangeSearchInput}
             />
             <button
-              type='button'
-              data-testid='searchButton'
-              className='search-btn'
+              type="button"
+              data-testid="searchButton"
+              className="search-btn"
               onClick={this.onSearchJobs}
             >
-              <BsSearch className='search-icon' />
+              <BsSearch className="search-icon" />
             </button>
           </div>
-          <div className='filters-container'>
-            <div className='profile-section'>{this.renderProfile()}</div>
-            <hr className='hr-line' />
+          <div className="filters-container">
+            <div className="profile-section">{this.renderProfile()}</div>
+            <hr className="hr-line" />
             {this.renderEmploymentTypes()}
-            <hr className='hr-line' />
+            <hr className="hr-line" />
             {this.renderSalaryRanges()}
-            <hr className='hr-line' />
+            <hr className="hr-line" />
             {this.renderLocations()}
           </div>
-          <div className='jobs-list-container'>
-            <div className='search-input-container-lg'>
+          <div className="jobs-list-container">
+            <div className="search-input-container-lg">
               <input
-                type='search'
-                className='search-input'
-                placeholder='Search'
+                type="search"
+                className="search-input"
+                placeholder="Search"
                 value={searchInput}
                 onChange={this.onChangeSearchInput}
               />
               <button
-                type='button'
-                data-testid='searchButton'
-                className='search-btn'
+                type="button"
+                data-testid="searchButton"
+                className="search-btn"
                 onClick={this.onSearchJobs}
               >
-                <BsSearch className='search-icon' />
+                <BsSearch className="search-icon" />
               </button>
             </div>
             {this.renderJobs()}
